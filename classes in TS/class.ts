@@ -147,5 +147,5 @@ class ElectricCar extends Car {
     }
 
     class Car implements Vehicle {
-        
+        ...
     }
