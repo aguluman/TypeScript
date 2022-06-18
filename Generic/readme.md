@@ -13,3 +13,9 @@
     - Reduce the need to use the "any"  type.
 
 Why use Generics, check out the index.ts in the Generics folder.
+
+###
+    Generics define one or more type variables to identify the type or types that you will pass to the component, enclosed in angle brackets (< >). (You'll also see type variables referred to as type parameters or generic parameters.) In the example above, the type variable in the function is called <T>. T is a commonly used name for a generic, but you can name it however you wish.
+
+    After you specify the type variable, you can use it in place of the type in parameters, the return type, or anywhere else in the function that you would add a type annotation.
+###
