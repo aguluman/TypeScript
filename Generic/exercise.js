@@ -1,5 +1,5 @@
 // Exercise - Implement generics with interfaces and classes
-// declaring two variables using the identity interface as an object
+// declaring two variables using the LookAlike interface as an object
 var returnNumber = {
     value: 34,
     message: 'I am Giannis Antetokoumpo'
@@ -8,8 +8,10 @@ var returnString = {
     value: 'My namw is Ja Morant',
     message: 12
 };
+console.log(returnNumber);
+console.log(returnString);
 function processLookAlike(value, message) {
-    console.log(message);
+    console.log(value, message);
     return value;
 }
 // ':' a colon is used to instantiate an interface
@@ -31,7 +33,7 @@ var processor2 = new processIdentity(44, 'Lewis Hamilton');
 processor2.process(); //Displays lewis hamilton
 processor2.value = '44';
 //how to define a generic class
-// we can define a generic class without an interface, belwo is how
+// we can define a generic class without an interface, below is how
 var processTwins = /** @class */ (function () {
     function processTwins(value, message) {
         this._value = value;

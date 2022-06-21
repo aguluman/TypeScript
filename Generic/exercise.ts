@@ -1,41 +1,49 @@
 // Exercise - Implement generics with interfaces and classes
 
-//How to declare a generic inerface
+
+
+//How to declare a generic interface
 interface LookAlike<T, U> {
     value: T;
     message: U;
 }
 
-// declaring two variables using the identity interface as an object
+// declaring two variables using the LookAlike interface as an object
 let returnNumber: LookAlike <number, string> = {
     value: 34,
     message: 'I am Giannis Antetokoumpo'
 }
 
 let returnString: LookAlike<string, number> = {
-    value : 'My namw is Ja Morant',
+    value : 'My name is Ja Morant',
     message: 12
 }
 
-//how to declare a generic interface as a function type
+console.log(returnNumber);
+console.log(returnString);
 
+//----------------------------------------------------------------------------------------\\
+
+//how to declare a generic interface as a function type
 interface ProcessLookAlike<T, U> {
-    (value: T, message: U): T;function
+    (value: T, message: U): T; function
 }
 
 function processLookAlike<T, U> (value: T, message: U) : T {
-    console.log(message);
+    console.log(value, message);
     return value;
 }
 
 // ':' a colon is used to instantiate an interface
-let processor: ProcessLookAlike<number, string> = processLookAlike;
+let processor: ProcessLookAlike<Number, string> = processLookAlike;
 
 let returnNumber1 = processor(24, 'Chukwuma');
 let returnString1= processor(2022, 'I will be funded and employed this 2022');  //Type check error
 
-// how to declare interface as a class type, we can declare a generic interface and implement it in a class
 
+//------------------------------------------------------------------------------------------------------------------------------------\\
+
+// how to declare interface as a class type, we can declare a generic interface and implement it in a class
 interface ProcessIdentity<T, U> {
 value: T;
 message: U;
@@ -59,10 +67,10 @@ class processIdentity<X, Y> implements ProcessIdentity<X, Y> {
 
 let processor2 = new processIdentity<number, string> (44, 'Lewis Hamilton');
 processor2.process(); //Displays lewis hamilton
-processor2.value = '44';
+processor2.value = '44'; //Displays error
 
 //how to define a generic class
-    // we can define a generic class without an interface, belwo is how
+    // we can define a generic class without an interface, below is how
 
 class processTwins<T, U> {
     private _value: T;
